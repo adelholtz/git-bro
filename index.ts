@@ -6,7 +6,7 @@ import figlet from 'figlet'
 
 import simpleGit from 'simple-git/promise'
 import { promisify } from 'util'
-import { exec } from 'child_process'
+import { exec, spawn } from 'child_process'
 
 clear()
 
@@ -21,9 +21,10 @@ const run = async () => {
 
     try {
         const execPromisified = promisify(exec)
-        const result = await execPromisified("git push")
+        const { stdout, stderr } = await execPromisified("git push")
         // const result = await git.push()
-        console.log(result)
+        console.log("out", stdout)
+        console.log("err",stderr)
     }catch(Exception){
         console.log(Exception)
         // const upstreamError = Exception.message.match(/git push --set-upstream\s.+/);
