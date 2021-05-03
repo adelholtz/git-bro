@@ -50,9 +50,11 @@ export default async function () {
         const answer = await inquirer.prompt(questions);
         let tag: string = answer.tag
         const tagHotfixVersion = createTagHotfixVersion(tag, tagChoices)
+        const hotfixBranch = "hotfix_" + tagHotfixVersion
 
-        // await git.checkoutBranch(tagHotfixVersion, answer.tag)
-        console.log("New hotfix branch " + chalk.green(tagHotfixVersion) + " created")
+        await git.checkoutBranch(hotfixBranch, answer.tag)
+        
+        console.log("New hotfix branch " + chalk.green(hotfixBranch) + " created")
     } catch (Exception) {
         console.log(Exception)
     }
