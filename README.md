@@ -2,6 +2,14 @@
 
 ## Install and Setup
 
+Stable version
+
+```bash
+yarn global add adelholtz/git-magic.git
+```
+
+For experimental features use
+
 ```bash
 yarn global add adelholtz/git-magic.git#dev
 ```
