@@ -5,7 +5,7 @@
 Stable version
 
 ```bash
-yarn global add adelholtz/git-magic.git
+yarn global add adelholtz/git-magic.git#stable
 ```
 
 For experimental features use
